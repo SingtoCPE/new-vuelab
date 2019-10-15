@@ -2,9 +2,17 @@
   <div id="app">
     <v-app>
       <v-container>
-        <h1 class="text-center display-2 font-weight-thin">Employee Management</h1>
+        <v-col cols="12" class="cyan lighten-2">
+          <h1 class="text-center display-3 font-weight-thin">Employee Management</h1>
+        </v-col>
         <add-employee />
         <get-employee />
+        <v-footer padless>
+          <v-col class="text-center" cols="12">
+            {{ new Date().getFullYear() }} —
+            <strong>The Dollasign.co.th</strong>
+          </v-col>
+        </v-footer>
       </v-container>
     </v-app>
   </div>

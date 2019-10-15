@@ -35,8 +35,8 @@ export const store = new Vuex.Store({
       });
       dispatch("getEmployee");
     },
-    async addEmployee({ _ }, { name, age, position }) {
-      await axios({
+    async addEmployee({ dispatch }, { name, age, position }) {
+      await Axios({
         method: "post",
         url: endpointAdd,
         data: {
@@ -45,6 +45,7 @@ export const store = new Vuex.Store({
           position
         }
       });
+      dispatch("getEmployee");
     }
   }
 });

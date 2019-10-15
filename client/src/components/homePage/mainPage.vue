@@ -1,18 +1,9 @@
 <template>
   <div class="mainPage">
-    <v-card>
-      <v-btn @click="clearToken">Sign-out</v-btn>
-      <h1>Main Page</h1>
-      <h2>Login Complete => This is main page :)</h2>
-      <div class="addEmployee">
-        <fieldset>
-          <legend>
-            <h1>Add</h1>
-          </legend>
-          <button class="button-add" @click="gotoAdd">Add Employee</button>
-        </fieldset>
-      </div>
-      <get-employee class="getEmployee" />
+    <v-card class="pa-6 mx-auto mb-10" color="purple lighten-4" width="800px">
+      <v-btn color="red lighten-1" @click="clearToken">Sign-out</v-btn>
+      <v-btn color="purple accent-3" @click="gotoAdd">Add Employee</v-btn>
+      <get-employee />
     </v-card>
   </div>
 </template>

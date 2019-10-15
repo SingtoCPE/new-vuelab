@@ -15,6 +15,7 @@
         <li v-for="(error,index) in errors" :key="index">{{error}}</li>
       </ul>
     </v-card>
+    <v-btn color="red lighten-1">Main</v-btn>
     <form>
       <v-hover v-slot:default="{ hover }">
         <v-card

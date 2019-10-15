@@ -2,9 +2,10 @@
   <div id="app">
     <v-app>
       <v-container>
-        <v-col cols="12" class="cyan lighten-2">
+        <v-col cols="12" class="cyan lighten-2 mb-10">
           <h1 class="text-center display-3 font-weight-thin">Employee Management</h1>
         </v-col>
+        <admin-login />
         <add-employee />
         <get-employee />
         <v-footer padless>
@@ -19,8 +20,9 @@
 </template>
 
 <script>
-import getEmployee from "./components/getEmployee";
-import addEmployee from "./components/addEmployee";
+import getEmployee from "./components/homePage/getEmployee";
+import addEmployee from "./components/homePage/addEmployee";
+import adminLogin from "./components/loginPage/adminLogin";
 import { store } from "./store/store";
 
 export default {
@@ -28,7 +30,8 @@ export default {
   store,
   components: {
     getEmployee,
-    addEmployee
+    addEmployee,
+    adminLogin
   }
 };
 </script>

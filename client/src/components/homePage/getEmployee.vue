@@ -2,13 +2,15 @@
   <div id="getEmployee">
     <v-hover v-slot:default="{ hover }">
       <v-card
-        class="pa-10 mx-auto mb-10"
+        class="pa-6 mx-auto mb-10"
         :elevation="hover ? 12 : 2"
-        color="cyan lighten-5"
+        color="purple lighten-4"
         width="800px"
       >
         <v-card class="pa-3" elevation="5" color="white">
-          <v-btn @click="getEmployee" color="cyan accent-4">Get Employee</v-btn>
+          <v-btn large @click="getEmployee" color="purple accent-3">
+            <v-icon>mdi-file-eye</v-icon>Get Employee
+          </v-btn>
           <v-simple-table>
             <thead>
               <tr>

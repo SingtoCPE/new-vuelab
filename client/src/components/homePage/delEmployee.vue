@@ -1,6 +1,8 @@
 <template>
   <div id="delEmployee">
-    <v-btn color="pink accent-3" @click="delEmployee(id)">Del</v-btn>
+    <v-btn color="red accent-1" @click="delEmployee(id)">
+      <v-icon>mdi-file-remove</v-icon>Del
+    </v-btn>
   </div>
 </template>
 <script>

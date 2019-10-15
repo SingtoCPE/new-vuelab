@@ -7,6 +7,7 @@ Vue.use(Vuex);
 const endpointGet = "http://localhost:3000/employee";
 const endpointDel = "http://localhost:3000/employee/del";
 const endpointAdd = "http://localhost:3000/employee/add";
+const endpointLogin = "http://localhost:3033/employee/login";
 
 export const store = new Vuex.Store({
   state: {
@@ -46,6 +47,9 @@ export const store = new Vuex.Store({
         }
       });
       dispatch("getEmployee");
+    },
+    async adminLogin() {
+      console.log("login-store");
     }
   }
 });

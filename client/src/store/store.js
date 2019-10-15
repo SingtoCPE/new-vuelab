@@ -6,6 +6,7 @@ Vue.use(Vuex);
 
 const endpointGet = "http://localhost:3000/employee";
 const endpointDel = "http://localhost:3000/employee/del";
+const endpointAdd = "http://localhost:3000/employee/add";
 
 export const store = new Vuex.Store({
   state: {
@@ -33,6 +34,17 @@ export const store = new Vuex.Store({
         }
       });
       dispatch("getEmployee");
+    },
+    async addEmployee({ _ }, { name, age, position }) {
+      await axios({
+        method: "post",
+        url: endpointAdd,
+        data: {
+          name,
+          age,
+          position
+        }
+      });
     }
   }
 });

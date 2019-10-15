@@ -1,5 +1,7 @@
 <template>
-  <v-btn color="pink accent-3" @click="delEmployee(id)">Del</v-btn>
+  <div id="delEmployee">
+    <v-btn color="pink accent-3" @click="delEmployee(id)">Del</v-btn>
+  </div>
 </template>
 <script>
 export default {

@@ -44,6 +44,18 @@ app.post("/employee/del", (req, res) => {
   });
 });
 
+app.post("/employee/add", (req, res) => {
+  let sql = `INSERT INTO new_employee.new_table (name, age, position) VALUES ('${req.body.name}', 
+  '${req.body.age}', '${req.body.position}');`;
+  db.query(sql, (err, results) => {
+    if (err) {
+      throw err;
+    } else {
+      res.json(results);
+    }
+  });
+});
+
 app.listen(port, () => {
   console.log("Server running on port: ", port);
 });

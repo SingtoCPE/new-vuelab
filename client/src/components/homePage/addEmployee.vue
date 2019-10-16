@@ -28,7 +28,13 @@
           width="600px"
         >
           <v-card class="pa-6" elevation="5" color="white">
-            <h1 class="text-center">ADD EMPLOYEE</h1>
+            <v-card
+              class="pa-auto mx-auto mt-5 mb-10 text-center"
+              width="350"
+              color="cyan accent-4 "
+            >
+              <h1>ADD EMPLOYEE</h1>
+            </v-card>
             <v-text-field v-model="employee.name" label="NAME"></v-text-field>
             <v-text-field v-model="employee.age" label="AGE"></v-text-field>
             <v-select v-model="employee.position" :items="items" label="POSITION" solo></v-select>
@@ -39,12 +45,15 @@
         </v-card>
       </v-hover>
     </form>
-    <v-footer absolute class="font-weight-medium" color="white">
-      <v-col class="text-center" cols="12">
-        2017 - {{ new Date().getFullYear() }} —
-        <strong>The Dollarsign.co.Ltd</strong>
-      </v-col>
-    </v-footer>
+
+    <v-col justify-self="center" cols="12" class="mb-auto pt-12 text-center">
+      <v-footer absolute class="font-weight-medium" color="white">
+        <v-col class="text-center" cols="12">
+          2017 - {{ new Date().getFullYear() }} —
+          <strong>The Dollarsign.co.Ltd</strong>
+        </v-col>
+      </v-footer>
+    </v-col>
   </div>
 </template>
 <script>

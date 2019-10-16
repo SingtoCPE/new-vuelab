@@ -8,14 +8,18 @@
           color="light-green darken-1"
           width="580px"
         >
-          <v-card class="pa-6 pb-12">
-            <v-col cols="12">
-              <v-card>
-                <v-img src="@/assets/dol1.png" height="80" contain class="light-green darken-1"></v-img>
-              </v-card>
-              <v-col class="pa-1 pb-12 pt-10 text-center">
-                <h1 class="font-weight-bold">The Dollarsign Account Login</h1>
-              </v-col>
+          <v-card class="pa-6 pb-10">
+            <v-card class="mx-auto text-center" width="100">
+              <v-img
+                src="@/assets/dol1.png"
+                width="100"
+                height="80"
+                contain
+                class="light-green darken-1"
+              ></v-img>
+            </v-card>
+            <v-col class="pa-1 pb-12 pt-8 text-center">
+              <h1 class="font-weight-bold">The Dollarsign Account Login</h1>
             </v-col>
             <label>USER NAME</label>
             <v-text-field outlined v-model="employee.user" placeholder="User Name">User Name</v-text-field>
@@ -36,12 +40,15 @@
           </v-card>
         </v-card>
       </v-hover>
-      <v-footer absolute class="font-weight-medium" color="white">
-        <v-col class="text-center" cols="12">
-          2017 - {{ new Date().getFullYear() }} —
-          <strong>The Dollarsign.co.Ltd</strong>
-        </v-col>
-      </v-footer>
+
+      <v-col justify-self="center" cols="12" class="mb-auto pt-12 text-center">
+        <v-footer absolute class="font-weight-medium" color="white">
+          <v-col class="text-center" cols="12">
+            2017 - {{ new Date().getFullYear() }} —
+            <strong>The Dollarsign.co.Ltd</strong>
+          </v-col>
+        </v-footer>
+      </v-col>
     </v-container>
   </div>
 </template>

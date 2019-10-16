@@ -50,6 +50,7 @@ export const store = new Vuex.Store({
         }
       });
       dispatch("getEmployee");
+      alert("ADDED !");
     },
     async adminLogin({ _ }, { user, password }) {
       const { data } = await Axios({

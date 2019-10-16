@@ -1,5 +1,8 @@
 <template>
   <div id="addEmployee">
+    <v-card class="d-flex align-end flex-column">
+      <v-btn @click="gotoMain" color="red lighten-1">Main</v-btn>
+    </v-card>
     <v-card
       v-if="errors.length"
       class="pa-6 mx-auto mb-10 mt-10"
@@ -15,7 +18,7 @@
         <li v-for="(error,index) in errors" :key="index">{{error}}</li>
       </ul>
     </v-card>
-    <v-btn color="red lighten-1">Main</v-btn>
+
     <form>
       <v-hover v-slot:default="{ hover }">
         <v-card
@@ -25,16 +28,23 @@
           width="600px"
         >
           <v-card class="pa-6" elevation="5" color="white">
+            <h1 class="text-center">ADD EMPLOYEE</h1>
             <v-text-field v-model="employee.name" label="NAME"></v-text-field>
             <v-text-field v-model="employee.age" label="AGE"></v-text-field>
             <v-select v-model="employee.position" :items="items" label="POSITION" solo></v-select>
             <v-btn large color="cyan accent-4 " type="submit" @click.prevent="validateForm">
-              <v-icon>mdi-file-edit</v-icon>ADD
+              <v-icon>mdi-file-plus</v-icon>ADD
             </v-btn>
           </v-card>
         </v-card>
       </v-hover>
     </form>
+    <v-footer absolute class="font-weight-medium" color="white">
+      <v-col class="text-center" cols="12">
+        2017 - {{ new Date().getFullYear() }} —
+        <strong>The Dollarsign.co.Ltd</strong>
+      </v-col>
+    </v-footer>
   </div>
 </template>
 <script>
@@ -77,6 +87,10 @@ export default {
       if (!this.employee.position) {
         this.errors.push("Position must not be blank !");
       }
+    },
+    gotoMain() {
+      window.location.href = "http://localhost:8080/#/mainpage";
+      console.log("gotoMain");
     }
   }
 };

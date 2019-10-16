@@ -20,14 +20,18 @@
             <h1>REGISTER ACCOUNT</h1>
           </v-card>
           <label>USER NAME</label>
-          <v-text-field outlined placeholder="User Name"></v-text-field>
+          <v-text-field v-model="account.user" outlined placeholder="User Name"></v-text-field>
+          <label>NAME</label>
+          <v-text-field v-model="account.name" outlined placeholder="Name"></v-text-field>
           <label>PASSWORD</label>
-          <v-text-field outlined placeholder="Password"></v-text-field>
+          <v-text-field v-model="account.password" outlined placeholder="Password"></v-text-field>
           <label>CONFIRM PASSWORD</label>
           <v-text-field outlined placeholder="Confirm Password"></v-text-field>
-          <v-btn x-large outlined block color="light-blue darken-1">
+          <v-checkbox v-model="checkbox1" :label="`${textConfirm} : ${checkbox1.toString()}`"></v-checkbox>
+          <v-btn x-large outlined block color="light-blue darken-1" @click="addAccount">
             <v-icon>mdi-account-plus</v-icon>Register
           </v-btn>
+
           <v-col justify-self="center" cols="12" class="mb-auto pt-12 text-center">
             <h4>
               มีบัญชีกับเราแล้ว?
@@ -54,9 +58,27 @@
 <script>
 export default {
   name: "admniResgister",
+  data() {
+    return {
+      checkbox1: true,
+      textConfirm: "กรุณาอ่านกฎและข้อตกลง",
+      account: {
+        user: "",
+        name: "",
+        password: ""
+      }
+    };
+  },
   methods: {
     gotoLogin() {
       window.location.href = "http://localhost:8080/#/";
+    },
+    addAccount() {
+      this.$store.dispatch("addAccount", {
+        user: this.account.user,
+        password: this.account.password,
+        name: this.account.name
+      });
     }
   }
 };

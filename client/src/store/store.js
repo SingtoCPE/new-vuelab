@@ -11,6 +11,7 @@ const endpointGet = "http://localhost:3000/employee";
 const endpointDel = "http://localhost:3000/employee/del";
 const endpointAdd = "http://localhost:3000/employee/add";
 const endpointLogin = "http://localhost:3033/employee/login";
+const endpointAddAccount = "http://localhost:3033/employee/add";
 
 export const store = new Vuex.Store({
   state: {
@@ -39,7 +40,7 @@ export const store = new Vuex.Store({
       });
       dispatch("getEmployee");
     },
-    async addEmployee({ dispatch }, { name, age, position }) {
+    async addEmployee({ _ }, { name, age, position }) {
       await Axios({
         method: "post",
         url: endpointAdd,
@@ -49,8 +50,19 @@ export const store = new Vuex.Store({
           position
         }
       });
-      dispatch("getEmployee");
       alert("ADDED !");
+    },
+    async addAccount({ _ }, { user, password, name }) {
+      await Axios({
+        method: "post",
+        url: endpointAddAccount,
+        data: {
+          user,
+          password,
+          name
+        }
+      });
+      alert("Register Complete!");
     },
     async adminLogin({ _ }, { user, password }) {
       const { data } = await Axios({

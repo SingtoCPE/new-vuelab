@@ -29,7 +29,7 @@
         >
           <v-card class="pa-6" elevation="5" color="white">
             <v-card
-              class="pa-auto mx-auto mt-5 mb-10 text-center"
+              class="pa-auto mx-auto mt-5 mb-10 text-center white--text"
               width="350"
               color="cyan accent-4 "
             >

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="light-green lighten-3">
     <v-card class="d-flex align-end flex-column">
       <v-btn color="red lighten-1" @click="gotoLogin">LOGIN</v-btn>
     </v-card>
@@ -13,11 +13,11 @@
       >
         <v-card class="pa-6">
           <v-card
-            class="pa-auto mx-auto mt-5 mb-10 text-center"
+            class="pa-auto mx-auto mt-5 mb-10 text-center white--text"
             width="350"
             color="light-green darken-1"
           >
-            <h1>Register Account</h1>
+            <h1>REGISTER ACCOUNT</h1>
           </v-card>
           <label>USER NAME</label>
           <v-text-field outlined placeholder="User Name"></v-text-field>

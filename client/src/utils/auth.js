@@ -3,7 +3,6 @@ export default {
     return localStorage.getItem("AuthToken");
   },
   setToken(token) {
-    console.log(token);
     return localStorage.setItem("AuthToken", token);
   }
 };

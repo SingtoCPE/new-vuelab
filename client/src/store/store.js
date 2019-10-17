@@ -12,6 +12,7 @@ const endpointDel = "http://localhost:3000/employee/del";
 const endpointAdd = "http://localhost:3000/employee/add";
 const endpointLogin = "http://localhost:3033/employee/login";
 const endpointAddAccount = "http://localhost:3033/employee/add";
+const endpointJwt = "http://localhost:3033/employee/accessToken";
 
 export const store = new Vuex.Store({
   state: {
@@ -30,6 +31,7 @@ export const store = new Vuex.Store({
       });
       commit("setData", data.map(data => data));
     },
+
     async delEmployee({ dispatch }, id) {
       await Axios({
         method: "post",
@@ -40,6 +42,7 @@ export const store = new Vuex.Store({
       });
       dispatch("getEmployee");
     },
+
     async addEmployee({ _ }, { name, age, position }) {
       await Axios({
         method: "post",
@@ -52,6 +55,7 @@ export const store = new Vuex.Store({
       });
       alert("ADDED !");
     },
+
     async addAccount({ _ }, { user, password, name }) {
       await Axios({
         method: "post",
@@ -64,6 +68,7 @@ export const store = new Vuex.Store({
       });
       alert("Register Complete!");
     },
+
     async adminLogin({ _ }, { user, password }) {
       const { data } = await Axios({
         method: "post",
@@ -83,6 +88,7 @@ export const store = new Vuex.Store({
         alert(data.resTextUserFailed);
       }
     },
+
     clearToken() {
       window.location.href = "http://localhost:8080/#/";
       Vue.localStorage.remove("AuthToken");

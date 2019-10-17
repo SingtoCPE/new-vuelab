@@ -8,6 +8,7 @@ Vue.config.productionTip = false;
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
+    console.log("JWT from DB: ", auth.getToken());
     if (!auth.getToken()) {
       next({
         path: "/",

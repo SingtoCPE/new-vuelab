@@ -1,5 +1,5 @@
 <template>
-  <div class="light-green lighten-3">
+  <div class="white">
     <v-card class="d-flex align-end flex-column">
       <v-btn color="red lighten-1" @click="gotoLogin">LOGIN</v-btn>
     </v-card>
@@ -25,7 +25,7 @@
         <v-card
           class="pa-6 mx-auto mb-10 mt-10"
           :elevation="hover ? 12 : 2"
-          color="light-green darken-1"
+          color="light-green lighten-3"
           width="580px"
         >
           <v-card class="pa-6">
@@ -36,27 +36,33 @@
             >
               <h1>REGISTER ACCOUNT</h1>
             </v-card>
-            <label>USER NAME</label>
-            <v-text-field v-model="account.user" outlined placeholder="User Name"></v-text-field>
-            <label>NAME</label>
-            <v-text-field v-model="account.name" outlined placeholder="Name"></v-text-field>
-            <label>PASSWORD</label>
-            <v-text-field v-model="account.password" outlined placeholder="Password"></v-text-field>
-            <label>CONFIRM PASSWORD</label>
-            <v-text-field v-model="account.confirmPassword" outlined placeholder="Confirm Password"></v-text-field>
-            <v-checkbox v-model="checkbox1" :label="`${textConfirm} : ${checkbox1.toString()}`"></v-checkbox>
-            <v-btn
-              x-large
-              outlined
-              block
-              color="light-blue darken-1"
-              type="submit"
-              @click.prevent="validateForm"
-            >
-              <v-icon>mdi-account-plus</v-icon>Register
-            </v-btn>
+            <v-text-field class="pl-5 pr-5" v-model="account.user" label="User Name"></v-text-field>
+            <v-text-field class="pl-5 pr-5" v-model="account.name" label="Name"></v-text-field>
+            <v-text-field class="pl-5 pr-5" v-model="account.password" label="Password"></v-text-field>
+            <v-text-field
+              class="pl-5 pr-5"
+              v-model="account.confirmPassword"
+              label="Confirm Password"
+            ></v-text-field>
+            <v-checkbox
+              class="pl-5 pr-5"
+              v-model="checkbox1"
+              :label="`${textConfirm} : ${checkbox1.toString()}`"
+            ></v-checkbox>
+            <v-col class="pa-4 mt-2">
+              <v-btn
+                x-large
+                outlined
+                block
+                color="light-blue darken-1"
+                type="submit"
+                @click.prevent="validateForm"
+              >
+                <v-icon>mdi-account-plus</v-icon>Register
+              </v-btn>
+            </v-col>
 
-            <v-col justify-self="center" cols="12" class="mb-auto pt-12 text-center">
+            <v-col justify-self="center" cols="12" class="mb-auto pt-9 text-center">
               <h4>
                 มีบัญชีกับเราแล้ว?
                 <a
@@ -93,7 +99,8 @@ export default {
         name: "",
         password: "",
         confirmPassword: ""
-      }
+      },
+      textFied: `class='pl-5 pr-5'`
     };
   },
   methods: {
